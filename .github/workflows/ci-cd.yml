@@ -37,7 +37,7 @@ jobs:
         run: |
           docker build -t $REGISTRY/$IMAGE_NAME:latest \
                        -t $REGISTRY/$IMAGE_NAME:${{ env.TAG }} \
-                       -f etc/Dockerfile releases/local/public
+                       -f etc/Dockerfile .
           docker push $REGISTRY/$IMAGE_NAME:latest
           docker push $REGISTRY/$IMAGE_NAME:${{ env.TAG }}
 
