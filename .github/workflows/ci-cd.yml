@@ -37,7 +37,7 @@ jobs:
         run: |
           docker build -t $REGISTRY/$IMAGE_NAME:latest \
                        -t $REGISTRY/$IMAGE_NAME:${{ env.TAG }} \
-                       -f docker_prism/dev/etc/Dockerfile docker_prism/dev
+                       -f etc/Dockerfile etc
           docker push $REGISTRY/$IMAGE_NAME:latest
           docker push $REGISTRY/$IMAGE_NAME:${{ env.TAG }}
 
