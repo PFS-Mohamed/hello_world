@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REGISTRY: docker.io
-      IMAGE_NAME: mohamedtolbapfs/test_kube
+      IMAGE_NAME: mohamedtolbapfs/hello-world
 
     steps:
       - name: Checkout code
