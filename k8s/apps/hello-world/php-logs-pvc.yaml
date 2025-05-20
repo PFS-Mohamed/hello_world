@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pfs-builder-logs-pvc
+  name: php-logs-pvc
   namespace: hello-world
 spec:
   accessModes:
