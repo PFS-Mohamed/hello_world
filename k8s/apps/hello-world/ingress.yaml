@@ -5,15 +5,25 @@ metadata:
   namespace: hello-world
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+
 spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - helloworld.fashionxlab.com
+      secretName: hello-tls
   rules:
-  - host: helloworld.fashionxlab.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: php-app-service
-            port:
-              number: 80
+    - host: pfs-builder1.fashionxlab.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: pfs-app-service
+                port:
+                  number: 80
+                  
