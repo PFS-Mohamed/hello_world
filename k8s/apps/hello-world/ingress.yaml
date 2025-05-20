@@ -16,7 +16,7 @@ spec:
         - helloworld.fashionxlab.com
       secretName: hello-tls
   rules:
-    - host: pfs-builder1.fashionxlab.com
+    - host: helloworld.fashionxlab.com
       http:
         paths:
           - path: /
