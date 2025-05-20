@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: php-app
+  name: hello-world
   namespace: hello-world
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: php-app
+      app: hello-world
   template:
     metadata:
       labels:
-        app: php-app
+        app: hello-world
     spec:
       containers:
-        - name: php-app
+        - name: hello-world
           image: mohamedtolbapfs/test_kube:latest
           imagePullPolicy: Always
           ports:
@@ -30,15 +30,15 @@ spec:
       volumes:
         - name: certs
           secret:
-            secretName: tls-certs
-        - name: php-logs
+            secretName: hello-world
+        - name: hello-world-logs
           persistentVolumeClaim:
-            claimName: php-logs-pvc
+            claimName: hello-world-logs-pvc
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: php-app-service
+  name: hello-world-service
   namespace: hello-world
 spec:
   type: ClusterIP
@@ -50,5 +50,4 @@ spec:
       port: 443
       targetPort: 443
   selector:
-    app: php-app
-
+    app: hello-world

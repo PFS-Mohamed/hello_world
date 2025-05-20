@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: php-app-ingress
+  name: hello-world-ingress
   namespace: hello-world
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -14,7 +14,7 @@ spec:
   tls:
     - hosts:
         - helloworld.fashionxlab.com
-      secretName: hello-tls
+      secretName: hello-world-tls
   rules:
     - host: helloworld.fashionxlab.com
       http:
@@ -23,7 +23,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: pfs-app-service
+                name: hello-world-service
                 port:
                   number: 80
                   
