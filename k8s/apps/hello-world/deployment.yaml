@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: certs
           secret:
-            secretName: hello-world
+            secretName: hello-world-tls
         - name: hello-world-logs
           persistentVolumeClaim:
             claimName: hello-world-logs-pvc
