@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -28,11 +27,6 @@ spec:
              limits:
                memory: "4Gi"
                cpu: "2"
-          volumeMounts:
-            - name: certs
-              mountPath: docker_prism/etc/letsencrypt
-            - name: php-logs
-              mountPath: /var/log/php
       volumes:
         - name: certs
           secret:
