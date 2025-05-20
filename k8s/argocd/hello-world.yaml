@@ -11,7 +11,7 @@ spec:
     path: k8s/apps/hello-world
   destination:
     server: https://kubernetes.default.svc
-    namespace: pfs-builder
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
