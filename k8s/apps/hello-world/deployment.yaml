@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: hello-world
-          image: mohamedtolbapfs/test_kube:latest
+          image: mohamedtolbapfs/test_kube:v20250521-6a4bc41
           imagePullPolicy: Always
           ports:
             - containerPort: 80
